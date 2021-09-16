@@ -1,0 +1,17 @@
+.scrollabel {
+    overflow: auto;
+    height: 300px;
+    width: 100%;
+}
+.scrollabel-max{
+    overflow: auto;
+    max-height: 41rem;
+    width: 100%;
+}
+.graf{
+    height: 30%;
+}
+.fondo {
+    background-image: radial-gradient(rgb(159, 57, 255),rgb(255, 150, 89));
+
+}

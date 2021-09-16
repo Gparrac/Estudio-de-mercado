@@ -1,0 +1,63 @@
+{% extends "padre.html" %}
+    
+{% block title %}
+    Panel de control
+{% endblock %}
+
+{% block content %}
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Bienvenido {{data['name']}}</h4>
+  
+</div>
+<p class="text-center fs-3"> ¿ QUE  PRODUCTO DESEA ESTUDIAR ?</p>
+<form class="row justify-content-evenly"  method="POST" action="{{url_for('buscar')}}">
+
+    <div class="col-12 col-md-4 card">
+        
+            <div class="mb-3">
+                <label class="mb-2">Categoria</label>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                    <select class="form-select" id="inputGroupSelect01" name="category">
+                      <option selected>Escoge...</option>
+                      {%for item in category %}                      
+                        <option value="{{item}}">{{item}}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+             </div>
+              <div class="mb-3">
+                <label class="mb-2">Tamaño</label>
+                 <input type="number" class="form-control" name="size">   
+             </div>
+              <div class="mb-3">
+                <label class="mb-2">Unidades</label>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                    <select class="form-select" id="inputGroupSelect01" name="unit">
+                      <option selected>Escoge...</option>
+                      {%for unit in units %}                      
+                        <option value="{{unit}}">{{unit}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+             </div>              
+                       
+    </div>
+    <div class="col-12 col-md-4 d-flex card ">
+        <div class="my-3 ">
+            <label class="mb-3">Datos adicionales</label>
+             <input type="text" class="form-control" placeholder="#Referencia,subcategoria, etc" name="references">   
+         </div>
+     <label class="mb-2">Presentación</label>
+     <div class="input-group my-2">                
+        <input type="file" class="form-control" id="inputGroupFile02">
+        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+      </div>   
+      <button type="submit" class="btn btn-outline-primary mt-5 py-3">comenzar</button>
+    </div>
+    
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+
+    </title>
+</head>
+<body class="d-flex flex-column">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
+        
+        <div class="container-fluid text-light">
+            <div class="w-30 d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                  </svg>  
+              <label class="navbar-brand mx-3" href="#">Nombre del usuario</label>
+            </div>
+            
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="#">Registros anteriores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Busqueda</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+      <div class="container my-5">
+        <div class="container-fluid pb-3  bg-light bg-gradient">
+            <p class="text-center fs-3 text-primary"> RESULTADOS DE LA BUSQUEDA</p>
+            <P class="text-wgrap fs-5"> Haciendo uso de web scraping en las 
+                diferentes plataformas  web(merqueo, exito, Jumbo y mercadolibre).</P>
+            <p class="text-wgrap fs-5">Con el objetivo de estudiar el producto {{title}}
+                con la presentación de {{size}}, se presentan las siguientes graficas 
+                en relación a las diferentes ofertas encontradas.
+            </p> 
+    
+        </div>
+        <div class="row justify-content-evenly my-5">
+            <div class="col-10 col-lg-4 m-3">
+                <p class="fs-4 text-center text-info    ">Productos economicos</p>
+            </div>
+            <div class="col-10 col-lg-6  m-3">
+                <p class="fs-4 text-center text-warning  ">En bodega</p>
+                <table class="table table-warning table-striped">
+                    ...
+                  </table>
+            </div>
+            <div class="col-10 col-lg-8 m-3">
+
+                <p class="fs-4 text-center  text-success">Filtro por referencia</p>
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">First</th>
+                          <th scope="col">Last</th>
+                          <th scope="col">Handle</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td colspan="2">Larry the Bird</td>
+                          <td>@twitter</td>
+                        </tr>
+                      </tbody>
+                  </table>
+            </div>
+        </div>           
+    </div><!----->
+      <footer class="container px-3 mt-5 bg-primary d-flex justify-content-center text-light">
+            <span >APP DE ESTUDIO DE MERCADO</span>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,157 @@
+{% extends "padre.html" %}
+
+{% block title %}
+    Resultados de la busqueda
+{% endblock %}
+{% block content %}
+
+    <p class="text-center fs-1 text-primary my-4"> RESULTADOS DE LA BUSQUEDA</p>
+
+
+
+<div class="row  my-5 justify-content-evenly fondo py-5 rounded">
+
+
+
+    <div class="col-10 col-lg-6  ">
+        
+        <div class="col-12 ">
+            <div class="container-fluid pb-3  bg-light bg-gradient mb-5">
+                <p class="text-start fs-3 text-primary my-2 text-uppercase">Descripción</p>
+                <P class="text-wgrap fs-5"> Haciendo uso de web scraping en las 
+                    diferentes plataformas  web(merqueo, exito, Jumbo y mercadolibre).</P>
+                <p class="text-wgrap fs-5">Con el objetivo de estudiar el producto {{title}}
+                    con la presentación de {{size}}, se presentan las siguientes graficas 
+                    en relación a las diferentes ofertas encontradas.
+                </p> 
+            
+            </div>
+        
+        
+            <div class="card">
+                <p class="fs-4 text-center text-danger text-uppercase fw-bold   ">Productos economicos</p>    
+                <img src="{{url_for('static',filename='archivo/graf_bp.png')}}" alt="" srcset="" class="w-75 rounded mx-auto d-block">
+            <div class="card-body">
+                
+                <div class="container-fluid   d-flex justify-content-end">
+                    <table class="table table-danger table-striped ">
+                        <thead>
+                            <tr>
+                                {% for col in column_names3 %}
+                                <th>{{col}}</th>
+                                {% endfor %}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for row in row_data3 %}
+                            <tr>
+                                {% for col, row_ in zip(column_names, row) %}
+                                {% if col == link_column %}
+                                <td>
+                                    <a  value={{ row_ }} name="person_id" form="patient_form" class="btn btn-outline-danger" href="{{row_}}">
+                                         Ir a tienda 
+                                    </a>
+                                </td>
+                                {% else %}
+                                <td>{{row_}}</td>
+                                {% endif %}
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+                      </table>
+                </div>                
+
+            </div> 
+            </div>       
+        </div>
+    
+    </div>
+    <div class="col-10 col-lg-5  ">
+        <div class="card pt-4" >
+            <p class="fs-4 text-center text-warning text-uppercase fw-bold">Ofertas por tienda</p>
+            <img src="{{url_for('static',filename='archivo/graf_total.png')}}" alt="" srcset="" class="graf">
+            <div class="card-body">
+                
+                <div class="scrollabel-max">
+                    <table class="table table-warning table-striped">
+                        <thead>
+                            <tr>
+                                {% for col in column_names %}
+                                <th>{{col}}</th>
+                                {% endfor %}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for row in row_data %}
+                            <tr>
+                                {% for col, row_ in zip(column_names, row) %}
+                                {% if col == link_column %}
+                                <td>
+                                    <a  value={{ row_ }} name="person_id" form="patient_form" class="btn btn-outline-warning" href="{{row_}}">
+                                         Ir a tienda 
+                                    </a>
+                                </td>
+                                {% else %}
+                                <td>{{row_}}</td>
+                                {% endif %}
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+                      </table>
+                </div>
+            </div>
+          </div>
+        
+        
+        
+
+
+
+    </div>
+    <div class="col-10 col-lg-8 m-3 d-flex justify-content-center flex-column">
+    <div class="container-fluid bg-light">
+
+    
+        <p class="fs-4 text-center  text-success text-uppercase fw-bold">Filtro por referencia</p>
+        <div class="scrollabel">
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        {% for col in column_names2 %}
+                        <th>{{col}}</th>
+                        {% endfor %}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for row in row_data2 %}
+                    <tr>
+                        {% for col, row_ in zip(column_names2, row) %}
+                        {% if col == link_column %}
+                        <td>
+                            <a  value={{ row_ }} name="person_id" form="patient_form" class="btn btn-outline-success" href="{{row_}}">
+                                Ir a tienda
+                            </a>
+                        </td>
+                        {% else %}
+                        <td>{{row_}}</td>
+                        {% endif %}
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+              </table>
+        </div>
+    </div>
+    </div>
+    
+          
+    
+    
+</div>           
+<div class="container d-flex justify-content-center">
+    <a  id="" class="btn btn-primary  px-5" href="{{url_for('save',name = '{{title}}-{{size}}-{{unit}}-{{reference}}')}}" role="button">Guardar</a>  
+</div>
+
+{% endblock %}
